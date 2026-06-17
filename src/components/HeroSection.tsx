@@ -48,15 +48,7 @@ const HeroSection: React.FC = () => {
           backgroundImage: `url(${siteContent.hero.backgroundImage})`,
           backgroundAttachment: 'fixed',
         }}
-      >
-        {/* Overlay - Changed to white background */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.75) 100%)',
-          }}
-        />
-      </div>
+      />
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 w-full">
