@@ -10,7 +10,7 @@ export const siteContent = {
     subtext: "年齢や経験を気にせず、洗練された空間で\n自分のペースで本物の演奏技術を磨ける場所。",
     cta: "体験レッスンを予約する",
     scrollText: "Scroll",
-    backgroundImage: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&w=1920&q=80",
+    backgroundImage: "https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&w=1920&q=80",
   },
   
   philosophy: {
