@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-end pb-32 md:pb-40 overflow-hidden">
+    <section className="relative min-h-screen flex items-end pb-40 md:pb-48 overflow-hidden">
       {/* Background Image - Static, no animation */}
       <div
         className="absolute inset-0 bg-cover bg-[80%_center] md:bg-[30%_center]"
@@ -43,7 +43,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Headline - Reduced font size */}
-          <h1 className="font-serif text-5xl md:text-7xl font-bold text-gray-900 mb-6"
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-6"
               style={{ letterSpacing: '-0.03em', lineHeight: '1.05' }}>
             {siteContent.hero.headline}
           </h1>
