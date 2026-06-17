@@ -49,11 +49,11 @@ const HeroSection: React.FC = () => {
           backgroundAttachment: 'fixed',
         }}
       >
-        {/* Overlay */}
+        {/* Overlay - Changed to white background */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(135deg, rgba(42,42,42,0.6) 0%, rgba(42,42,42,0.2) 100%)',
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.75) 100%)',
           }}
         />
       </div>
@@ -61,19 +61,19 @@ const HeroSection: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 w-full">
         <div className="max-w-3xl animate-fade-in">
-          {/* Overline Badge */}
-          <div className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-white/90 text-sm font-medium mb-6">
+          {/* Overline Badge - Changed to dark on light background */}
+          <div className="inline-block px-4 py-2 rounded-full bg-gray-900/10 backdrop-blur-md text-gray-700 text-sm font-medium mb-6">
             {siteContent.hero.overlineBadge}
           </div>
 
-          {/* Headline */}
-          <h1 className="font-serif text-6xl md:text-8xl font-bold text-white mb-6"
+          {/* Headline - Changed to gray text */}
+          <h1 className="font-serif text-6xl md:text-8xl font-bold text-gray-900 mb-6"
               style={{ letterSpacing: '-0.03em', lineHeight: '1.05' }}>
             {siteContent.hero.headline}
           </h1>
 
-          {/* Subtext */}
-          <p className="text-lg md:text-xl text-white/80 max-w-xl mb-10"
+          {/* Subtext - Changed to darker gray */}
+          <p className="text-lg md:text-xl text-gray-700 max-w-xl mb-10"
              style={{ lineHeight: '1.7' }}>
             {siteContent.hero.subtext.split('\n').map((line, i) => (
               <React.Fragment key={i}>
@@ -95,10 +95,10 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Changed to gray */}
       <button
         onClick={scrollToNext}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 hover:text-white/90 transition-colors cursor-pointer group"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors cursor-pointer group"
         aria-label="Scroll down"
       >
         <span className="text-sm tracking-wider">{siteContent.hero.scrollText}</span>
