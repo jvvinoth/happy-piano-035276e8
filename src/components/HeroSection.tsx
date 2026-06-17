@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-end pb-32 md:pb-40 overflow-hidden">
       {/* Background Image - Static, no animation */}
       <div
         className="absolute inset-0 bg-cover bg-[80%_center] md:bg-[30%_center]"
