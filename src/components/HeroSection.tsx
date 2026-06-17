@@ -43,10 +43,11 @@ const HeroSection: React.FC = () => {
       {/* Background Image with Parallax */}
       <div
         ref={heroRef}
-        className="absolute inset-0 bg-cover bg-center will-change-transform"
+        className="absolute inset-0 bg-cover will-change-transform"
         style={{
           backgroundImage: `url(${siteContent.hero.backgroundImage})`,
           backgroundAttachment: 'fixed',
+          backgroundPosition: '30% center',
         }}
       >
         {/* Overlay */}
