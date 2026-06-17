@@ -10,7 +10,7 @@ export const siteContent = {
     subtext: "年齢や経験を気にせず、洗練された空間で\n自分のペースで本物の演奏技術を磨ける場所。",
     cta: "体験レッスンを予約する",
     scrollText: "Scroll",
-    backgroundImage: "https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&w=1920&q=80",
+    backgroundImage: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&w=1920&q=80",
   },
   
   philosophy: {
@@ -85,7 +85,7 @@ export const siteContent = {
       "全日本ピアノ指導者協会会員"
     ],
     bio: "幼少期からピアノを始め、東京音楽大学を卒業後、国内外で演奏活動を行いながら、後進の指導にも力を入れてきました。\n\n特に大人の生徒さんへの指導に情熱を注いでおり、それぞれの生活スタイルや目標に寄り添った丁寧なレッスンを心がけています。\n\n「音楽は人生を豊かにする大切な要素。大人になってからでも、いつからでも始められます」という信念のもと、一人ひとりに合わせたカリキュラムで指導しています。",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&auto=format&fit=crop&q=80"
+    image: "https://pub-b10352cd30db47758f1614c0d15bce2c.r2.dev/media/line_U0a34e5e927e8fb6e0192ea38c1614c0d15bce2c.r2.dev/media/line_U0a34e5e927e8fb6e0192ea38cac4edc6/2026-06/e2dae7a1-45f8-4485-a644-838e17029b99.jpg"
   },
   
   booking: {
