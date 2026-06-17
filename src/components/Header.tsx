@@ -105,7 +105,7 @@ const Header: React.FC = () => {
       {/* Mobile Menu Modal Overlay */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/40 z-40 md:hidden"
+          className="fixed inset-0 bg-black/30 z-40 md:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <div 
@@ -117,7 +117,9 @@ const Header: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-left text-lg font-medium text-white hover:text-primary transition-colors py-2"
+                  className={`text-left text-lg font-medium transition-colors py-2 ${
+                    isScrolled ? 'text-charcoal' : 'text-white'
+                  }`}
                 >
                   {item.label}
                 </button>
