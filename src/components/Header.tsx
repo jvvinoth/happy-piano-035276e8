@@ -102,7 +102,7 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Modal Overlay */}
+      {/* Mobile Menu Modal Overlay with 30% transparency */}
       {isMobileMenuOpen && (
         <div 
           className="fixed inset-0 bg-black/30 z-40 md:hidden"

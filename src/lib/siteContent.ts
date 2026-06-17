@@ -32,44 +32,65 @@ export const siteContent = {
     subtext: "初心者から経験者まで、柔軟に対応いたします。",
     plans: [
       {
-        name: "はじめてコース",
+        name: "入門",
         subtitle: "Beginner Course",
         description: "ピアノに触れるのが初めての方向け。基礎から丁寧に、楽譜の読み方や姿勢、指の使い方まで一つひとつ学んでいきます。",
-        duration: "月3回 / 各45分",
-        price: "¥12,000/月",
+        duration: "月3回45分",
+        price: "¥8,000",
+        priceUnit: "/月",
         features: [
           "楽譜の読み方から丁寧に指導",
           "正しい姿勢と指の使い方",
           "基礎練習と簡単な曲の演奏",
           "個人のペースに合わせた進行"
-        ]
+        ],
+        stripePriceId: "price_beginner_8000"
       },
       {
-        name: "再スタートコース",
-        subtitle: "Restart Course",
-        description: "昔習っていた方、ブランクのある方向け。技術を取り戻しながら、新しいレパートリーにも挑戦していきます。",
-        duration: "月3回 / 各60分",
-        price: "¥15,000/月",
+        name: "初級",
+        subtitle: "Elementary Course",
+        description: "基礎を固めながら、より多彩な曲に挑戦していきます。音楽の楽しさを実感しながらステップアップできます。",
+        duration: "月3回45分",
+        price: "¥10,000",
+        priceUnit: "/月",
         features: [
-          "かつての技術を丁寧に取り戻す",
-          "好きな曲、弾きたい曲に挑戦",
+          "基礎技術の定着と発展",
+          "多様なジャンルの曲に挑戦",
+          "音楽表現の基礎を学ぶ",
+          "レパートリーを広げる"
+        ],
+        stripePriceId: "price_elementary_10000"
+      },
+      {
+        name: "中級",
+        subtitle: "Intermediate Course",
+        description: "より高度な演奏技術と表現力を磨きます。好きな曲、弾きたい曲に本格的に取り組んでいきます。",
+        duration: "月3回45分",
+        price: "¥12,000",
+        priceUnit: "/月",
+        features: [
+          "高度な演奏技術の習得",
+          "好きな曲に本格的に挑戦",
           "表現力を深める練習",
           "柔軟なカリキュラム設定"
         ],
-        featured: true
+        featured: true,
+        stripePriceId: "price_intermediate_12000"
       },
       {
-        name: "マスターコース",
-        subtitle: "Master Course",
+        name: "上級",
+        subtitle: "Advanced Course",
         description: "さらに高度な演奏技術を目指す方向け。クラシックの名曲や複雑な楽曲にも取り組み、表現の幅を広げます。",
-        duration: "月4回 / 各60分",
-        price: "¥20,000/月",
+        duration: "月3回45分",
+        price: "¥16,000",
+        priceUnit: "/月",
         features: [
-          "高度な演奏技術の習得",
+          "上級演奏技術の習得",
           "クラシック名曲への挑戦",
           "音楽理論の深い理解",
           "個人の目標に合わせた指導"
-        ]
+        ],
+        stripePriceId: "price_advanced_16000"
       }
     ]
   },

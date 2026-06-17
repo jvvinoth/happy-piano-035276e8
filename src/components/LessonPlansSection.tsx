@@ -23,13 +23,48 @@ const LessonPlansSection: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  const handleStripeCheckout = async (priceId: string, planName: string) => {
+    // Integration point for Stripe Checkout
+    // See src/lib/stripe.ts for complete backend setup guide
+    
+    try {
+      // In production, this would call your backend API:
+      // const response = await fetch('/api/create-checkout-session', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({
+      //     priceId,
+      //     planName,
+      //     mode: 'subscription',
+      //     successUrl: `${window.location.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+      //     cancelUrl: window.location.href,
+      //   })
+      // });
+      // const { url } = await response.json();
+      // window.location.href = url;
+      
+      // Demo alert (replace with actual Stripe integration)
+      alert(
+        `Stripe月額サブスクリプション\n\n` +
+        `コース: ${planName}\n` +
+        `Price ID: ${priceId}\n\n` +
+        `本番環境では、Stripe Checkoutページへリダイレクトされ、\n` +
+        `月額での自動課金が設定されます。\n\n` +
+        `詳細な実装方法は src/lib/stripe.ts をご確認ください。`
+      );
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('エラーが発生しました。もう一度お試しください。');
+    }
+  };
+
   return (
     <section
       id="lesson-plans"
       ref={sectionRef}
       className="bg-background py-20 md:py-32"
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="text-center mb-16" data-reveal>
           <div className="text-sm uppercase tracking-widest text-primary font-medium mb-3">
@@ -47,13 +82,13 @@ const LessonPlansSection: React.FC = () => {
         </div>
 
         {/* Lesson Plan Cards */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {siteContent.lessonPlans.plans.map((plan, index) => (
             <div
               key={index}
               data-reveal
               style={{ transitionDelay: `${index * 0.1}s` }}
-              className={`bg-surface rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative ${
+              className={`bg-surface rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative flex flex-col ${
                 plan.featured ? 'ring-2 ring-primary' : ''
               }`}
             >
@@ -64,7 +99,7 @@ const LessonPlansSection: React.FC = () => {
               )}
 
               {/* Card Header */}
-              <div className="mb-6">
+              <div className="mb-6 flex-grow">
                 <h3 className="font-serif text-2xl md:text-3xl font-semibold text-charcoal mb-2"
                     style={{ lineHeight: '1.3' }}>
                   {plan.name}
@@ -72,7 +107,7 @@ const LessonPlansSection: React.FC = () => {
                 <p className="text-sm text-text-muted tracking-wider mb-4">
                   {plan.subtitle}
                 </p>
-                <p className="text-base text-charcoal mb-6" style={{ lineHeight: '1.7' }}>
+                <p className="text-sm text-charcoal mb-6" style={{ lineHeight: '1.7' }}>
                   {plan.description}
                 </p>
               </div>
@@ -82,13 +117,16 @@ const LessonPlansSection: React.FC = () => {
                 <div className="flex items-baseline justify-between mb-2">
                   <span className="text-sm text-text-muted">{plan.duration}</span>
                 </div>
-                <div className="text-3xl font-bold text-primary">
-                  {plan.price}
+                <div className="flex items-baseline gap-1">
+                  <span className="text-3xl font-bold text-primary">
+                    {plan.price}
+                  </span>
+                  <span className="text-sm text-text-muted">{plan.priceUnit}</span>
                 </div>
               </div>
 
               {/* Features */}
-              <ul className="space-y-3">
+              <ul className="space-y-3 mb-6">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
@@ -100,8 +138,24 @@ const LessonPlansSection: React.FC = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* Stripe Subscribe Button */}
+              <button
+                onClick={() => handleStripeCheckout(plan.stripePriceId, plan.name)}
+                className="w-full bg-primary text-white py-3 px-6 rounded-full font-medium text-sm tracking-wide hover:bg-accent transition-all duration-300 hover:scale-105 shadow-md mt-auto"
+              >
+                月額で申し込む
+              </button>
             </div>
           ))}
+        </div>
+
+        {/* Note about Stripe */}
+        <div className="text-center mt-12" data-reveal>
+          <p className="text-sm text-text-muted">
+            お支払いは安全なStripeシステムを通じて処理されます。<br />
+            いつでもキャンセル可能です。
+          </p>
         </div>
       </div>
     </section>
