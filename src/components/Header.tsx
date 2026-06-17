@@ -101,9 +101,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className={`md:hidden py-6 border-t transition-colors ${
-            isScrolled ? 'border-border bg-white/95' : 'border-white/20 bg-charcoal/95 backdrop-blur-md'
-          }`}>
+          <div className="md:hidden py-6">
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <button
