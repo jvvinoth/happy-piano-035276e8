@@ -102,14 +102,14 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Modal Overlay with 30% transparency */}
+      {/* Mobile Menu with Semi-Transparent Overlay Backdrop */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/30 z-40 md:hidden"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <div 
-            className="absolute top-20 left-0 right-0 px-6 py-8"
+            className="absolute top-20 left-0 right-0 bg-white mx-6 rounded-2xl shadow-2xl px-6 py-8"
             onClick={(e) => e.stopPropagation()}
           >
             <nav className="flex flex-col gap-6">
@@ -117,9 +117,7 @@ const Header: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-left text-lg font-medium transition-colors py-2 ${
-                    isScrolled ? 'text-charcoal' : 'text-white'
-                  }`}
+                  className="text-left text-lg font-medium transition-colors py-2 text-charcoal hover:text-primary"
                 >
                   {item.label}
                 </button>
