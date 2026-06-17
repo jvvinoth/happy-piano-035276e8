@@ -42,8 +42,8 @@ const HeroSection: React.FC = () => {
             {siteContent.hero.overlineBadge}
           </div>
 
-          {/* Headline - Reduced font size */}
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+          {/* Headline - Changed to white */}
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6"
               style={{ letterSpacing: '-0.03em', lineHeight: '1.05' }}>
             {siteContent.hero.headline}
           </h1>
