@@ -106,7 +106,7 @@ export const siteContent = {
       "全日本ピアノ指導者協会会員"
     ],
     bio: "幼少期からピアノを始め、東京音楽大学を卒業後、国内外で演奏活動を行いながら、後進の指導にも力を入れてきました。\n\n特に大人の生徒さんへの指導に情熱を注いでおり、それぞれの生活スタイルや目標に寄り添った丁寧なレッスンを心がけています。\n\n「音楽は人生を豊かにする大切な要素。大人になってからでも、いつからでも始められます」という信念のもと、一人ひとりに合わせたカリキュラムで指導しています。",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&w=1600"
+    image: "https://pub-b10352cd30db47758f1614c0d15bce2c.r2.dev/media/line_U0a34e5e927e8fb6e0192ea38cac4edc6/2026-06/46a8ed6b-db7f-4280-b0f4-5d09bbe2d4ab.jpg"
   },
   
   booking: {
