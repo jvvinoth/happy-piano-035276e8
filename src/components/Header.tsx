@@ -101,13 +101,17 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-6 border-t border-border">
+          <div className={`md:hidden py-6 border-t transition-colors ${
+            isScrolled ? 'border-border bg-white/95' : 'border-white/20 bg-charcoal/95 backdrop-blur-md'
+          }`}>
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-left text-base font-medium text-charcoal hover:text-primary transition-colors py-2"
+                  className={`text-left text-base font-medium transition-colors py-2 ${
+                    isScrolled ? 'text-charcoal hover:text-primary' : 'text-white hover:text-primary'
+                  }`}
                 >
                   {item.label}
                 </button>
