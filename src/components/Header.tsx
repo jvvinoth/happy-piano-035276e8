@@ -36,79 +36,45 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex flex-col leading-none group"
-          >
-            <span
-              className={`font-serif font-bold text-2xl transition-colors ${
-                isScrolled ? 'text-charcoal' : 'text-white'
-              }`}
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white/95 backdrop-blur-md shadow-sm'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="flex flex-col leading-none group"
             >
-              Happy Piano
-            </span>
-            <span
-              className={`text-xs tracking-wider transition-colors ${
-                isScrolled ? 'text-text-muted' : 'text-white/70'
-              }`}
-            >
-              大人のためのピアノ教室
-            </span>
-          </button>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium tracking-wide transition-colors hover:text-primary ${
+              <span
+                className={`font-serif font-bold text-2xl transition-colors ${
                   isScrolled ? 'text-charcoal' : 'text-white'
                 }`}
               >
-                {item.label}
-              </button>
-            ))}
-            <button
-              onClick={() => scrollToSection('booking')}
-              className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-medium tracking-wide hover:bg-accent transition-all duration-300 hover:scale-105 shadow-md"
-            >
-              体験レッスン予約
+                Happy Piano
+              </span>
+              <span
+                className={`text-xs tracking-wider transition-colors ${
+                  isScrolled ? 'text-text-muted' : 'text-white/70'
+                }`}
+              >
+                大人のためのピアノ教室
+              </span>
             </button>
-          </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 transition-colors ${
-              isScrolled ? 'text-charcoal' : 'text-white'
-            }`}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-6">
-            <nav className="flex flex-col gap-4">
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-left text-base font-medium transition-colors py-2 ${
-                    isScrolled ? 'text-charcoal hover:text-primary' : 'text-white hover:text-primary'
+                  className={`text-sm font-medium tracking-wide transition-colors hover:text-primary ${
+                    isScrolled ? 'text-charcoal' : 'text-white'
                   }`}
                 >
                   {item.label}
@@ -116,15 +82,57 @@ const Header: React.FC = () => {
               ))}
               <button
                 onClick={() => scrollToSection('booking')}
-                className="bg-primary text-white px-6 py-3 rounded-full text-sm font-medium tracking-wide hover:bg-accent transition-all duration-300 mt-2 text-center"
+                className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-medium tracking-wide hover:bg-accent transition-all duration-300 hover:scale-105 shadow-md"
+              >
+                体験レッスン予約
+              </button>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={`md:hidden p-2 transition-colors ${
+                isScrolled ? 'text-charcoal' : 'text-white'
+              }`}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Menu Modal Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/40 z-40 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          <div 
+            className="absolute top-20 left-0 right-0 px-6 py-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <nav className="flex flex-col gap-6">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-left text-lg font-medium text-white hover:text-primary transition-colors py-2"
+                >
+                  {item.label}
+                </button>
+              ))}
+              <button
+                onClick={() => scrollToSection('booking')}
+                className="bg-primary text-white px-6 py-3 rounded-full text-sm font-medium tracking-wide hover:bg-accent transition-all duration-300 mt-2 text-center shadow-lg"
               >
                 体験レッスン予約
               </button>
             </nav>
           </div>
-        )}
-      </div>
-    </header>
+        </div>
+      )}
+    </>
   );
 };
 
