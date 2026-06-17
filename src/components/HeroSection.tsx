@@ -43,7 +43,7 @@ const HeroSection: React.FC = () => {
       {/* Background Image with Parallax */}
       <div
         ref={heroRef}
-        className="absolute inset-0 bg-cover will-change-transform bg-[65%_center] md:bg-[30%_center]"
+        className="absolute inset-0 bg-cover will-change-transform bg-[80%_center] md:bg-[30%_center]"
         style={{
           backgroundImage: `url(${siteContent.hero.backgroundImage})`,
           backgroundAttachment: 'fixed',
