@@ -1,22 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 import { siteContent } from '../lib/siteContent';
 
 const HeroSection: React.FC = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (heroRef.current) {
-        const scrollY = window.scrollY;
-        heroRef.current.style.transform = `translateY(${scrollY * 0.3}px)`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const scrollToNext = () => {
     const nextSection = document.getElementById('philosophy');
     if (nextSection) {
@@ -40,13 +26,11 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Parallax */}
+      {/* Background Image - Static, no animation */}
       <div
-        ref={heroRef}
-        className="absolute inset-0 bg-cover will-change-transform bg-[80%_center] md:bg-[30%_center]"
+        className="absolute inset-0 bg-cover bg-[80%_center] md:bg-[30%_center]"
         style={{
           backgroundImage: `url(${siteContent.hero.backgroundImage})`,
-          backgroundAttachment: 'fixed',
         }}
       />
 
